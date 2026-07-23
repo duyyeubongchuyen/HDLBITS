@@ -1,0 +1,96 @@
+$date
+	Thu Jul 23 12:42:45 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb $end
+$var wire 1 ! p2y $end
+$var wire 1 " p1y $end
+$var reg 1 # p1a $end
+$var reg 1 $ p1b $end
+$var reg 1 % p1c $end
+$var reg 1 & p1d $end
+$var reg 1 ' p1e $end
+$var reg 1 ( p1f $end
+$var reg 1 ) p2a $end
+$var reg 1 * p2b $end
+$var reg 1 + p2c $end
+$var reg 1 , p2d $end
+$scope module uut $end
+$var wire 1 # p1a $end
+$var wire 1 $ p1b $end
+$var wire 1 % p1c $end
+$var wire 1 & p1d $end
+$var wire 1 ' p1e $end
+$var wire 1 ( p1f $end
+$var wire 1 " p1y $end
+$var wire 1 ) p2a $end
+$var wire 1 * p2b $end
+$var wire 1 + p2c $end
+$var wire 1 , p2d $end
+$var wire 1 ! p2y $end
+$var wire 1 - w1 $end
+$var wire 1 . w2 $end
+$var wire 1 / w3 $end
+$var wire 1 0 w4 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+00
+0/
+0.
+1-
+0,
+0+
+1*
+1)
+0(
+0'
+0&
+0%
+0$
+0#
+0"
+1!
+$end
+#10
+0!
+1"
+0-
+10
+1/
+0*
+0)
+1(
+1'
+1&
+1%
+1$
+1#
+#20
+0"
+00
+0/
+1,
+1)
+0'
+0%
+0#
+#30
+0,
+1+
+1*
+0)
+0(
+1'
+0&
+1%
+0$
+1#
+#40
