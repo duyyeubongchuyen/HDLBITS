@@ -32,8 +32,8 @@ module add1 (
     output cout
 );
 
-    assign sum = a ^ b ^ cin;
-    assign cout = cin & (a ^ b);
-    
-endmodule
+    wire axorb = a ^ b;
+    assign sum = axorb ^ cin;
+    assign cout = (a & b) | (cin & axorb);
 
+endmodule
