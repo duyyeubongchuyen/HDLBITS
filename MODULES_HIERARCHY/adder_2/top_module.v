@@ -6,15 +6,15 @@ module top_module (
 
     wire cout1;
 
-    add16 inst1 (
+    add16 lower_adder (
         .a(a[15:0]),
         .b(b[15:0]),
         .cin(1'b0),
         .sum(sum[15:0]),
-        .cout(cout1),
+        .cout(cout1)
     );
 
-    add16 inst2 (
+    add16 upper_adder (
         .a(a[31:16]),
         .b(b[31:16]),
         .cin(cout1),
@@ -23,3 +23,17 @@ module top_module (
     );
 
 endmodule
+
+module add1 (
+    input a,
+    input b,
+    input cin,
+    output sum,
+    output cout
+);
+
+    assign sum = a ^ b ^ cin;
+    assign cout = cin & (a ^ b);
+    
+endmodule
+
