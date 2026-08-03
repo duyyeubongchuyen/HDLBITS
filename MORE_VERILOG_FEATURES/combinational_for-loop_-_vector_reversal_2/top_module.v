@@ -6,9 +6,9 @@ module top_module (
     integer i;
 
     always @(*) begin
-        for(i = 0; i < 100; i = i + 1)
+        for(i = 0; i < 100; i = i + 1) begin
             out[i] = in[99-i];
         end
     end
-    
+
 endmodule 
