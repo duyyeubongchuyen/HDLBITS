@@ -16,17 +16,19 @@ module top_module(
     output [2:0] cout
 );
 
-    wire [3:0] cout_temp = {cout, cin};
+    wire [3:0] cout_temp;
+    assign cout_temp[0] = cin;
+    assign cout = cout_temp[3:1];
 
     genvar i;
     generate
-        for(i=0,i<3,i = i + 1) begin : fadd_gen
+        for(i=0;i<3;i = i + 1) begin : fadd_gen
             fadd inst (
-                .a(a[i]);
-                .b(b[i]);
-                .cin(cout_temp[i]);
-                .cout(cout_temp[i+1]);
-                .sum(sum[i]);
+                .a(a[i]),
+                .b(b[i]),
+                .cin(cout_temp[i]),
+                .cout(cout_temp[i+1]),
+                .sum(sum[i])
             );
         end
     endgenerate
