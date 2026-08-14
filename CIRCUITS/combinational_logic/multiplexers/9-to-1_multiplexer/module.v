@@ -15,7 +15,7 @@ module top_module (
             4'd6: out = g;
             4'd7: out = h;
             4'd8: out = i;
-            default: out = 0;
+            default: out = 16'b1111111111111111;
         endcase
     end
 

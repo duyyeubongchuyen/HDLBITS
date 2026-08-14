@@ -4,6 +4,6 @@ module top_module (
     output [99:0] out
 );
 
-    assign out = sel ? b : a;
+    assign out = sel ? b :a;
 
 endmodule
