@@ -5,7 +5,7 @@ module top_module(
 );
 
     always @(posedge clk) begin
-        q = d;
+        q <= d;
     end
 
 endmodule
