@@ -2,40 +2,40 @@ module top_module (
     input clk,
     input reset,
     input enable,
-    output reg [3:0] Q,
+    output [3:0] Q,
     output c_enable,
     output c_load,
-    output c_d
+    output [3:0] c_d
 );
+
+    assign c_load = reset || (Q == 4'd12 && enable);
+    assign c_enable = enable;
+    assign c_d =  4'd1;
 
     count4 c0 (
         .clk(clk),
-        .enable(reset | enable),
-        .load(enable),
-        .d(Q),
+        .enable(c_enable),
+        .load(c_load),
+        .d(c_d),
         .Q(Q)
     );
-
-    assign c_load = enable;
-    assign c_enable = reset | enable;
-    assign c_d =  Q;
 
 endmodule
 
 
 module count4(
     input clk,
-    input enable, // mạch về 1
-    input load, // cho phép chuyển qua cho Q
+    input enable, // cho phép thực hiện phép cộng 
+    input load, // ép Q về một giá trị nào đó
     input [3:0] d,
     output reg[3:0] Q
 );
     always @(posedge clk) begin
-        if(load) begin
-            if(enable) Q <= 4'd1;
-            else Q <= Q + 1;
+        if(load) Q <= d;
+        else begin
+            if(enable) Q <= Q + 1;
+            else Q <= Q;
         end
-        else Q <= Q;
     end
 
 endmodule
