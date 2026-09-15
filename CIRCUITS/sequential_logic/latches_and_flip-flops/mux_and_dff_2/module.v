@@ -56,3 +56,18 @@ module top_module (
     );
 
 endmodule
+
+//MUXDFF TỐI ƯU
+module top_module (
+    input clk,
+    input w, R, E, L,
+    output Q
+);
+
+    always @(posedge clk) begin
+        if({E, L} == 2'b00) Q <= Q;
+        else if({E, L} == 2'b10) Q <= w;
+        else Q <= R;
+    end
+    
+endmodule
